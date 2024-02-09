@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="t1"/>
+        <button onclick="add()">Add</button>
+    </div>
+    <div id="data"></div>
+    <script>
+        let txt=document.getElementById("t1")
+        let data=document.getElementById("data")
+        function add(){
+            if (txt.value.length>0){
+                let li=document.createElement("li")
+                li.innerHTML=txt.value
+                data.appendChild(li)
+                
+                let span=document.createElement("span")
+                span.innerHTML="X"
+                span.addEventListener("click",del)
+                li.appendChild(span)
+                txt.value=" "
+
+            }
+            else{
+                alert("please enter data")
+
+            }
+
+        }
+        function del(event){
+            event.target .parentElement.remove()
+        }
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="err"></div>
+    <input type="text" id="t1"/>
+    <button onclick="add()">Add</button>
+    <div class="con"></div>
+
+    <script>
+      let tref=document.getElementById("t1")   
+    let conref=document.getElementsByClassName("con")[0]
+   function add(){
+   
+    if (tref.value.length>0){
+        let liref=document.createElement('li')
+        liref.innerHTML=tref.value
+        conref.appendChild(liref)
+        tref.value=""
+
+    }
+    else{
+        let err=document.getElementById('err')
+        err.innerHTML="please fill "
+
+    }
+
+   }
+   
+    </script>
+     -->
+     <div id="err"></div>
+     <input type="text" id="t1" placeholder="enter text"/>
+     <button onclick="add()" id="b1">Add</button>
+     <div id="d2"></div>
+
+
+     <script>
+        let err=document.getElementById("err")
+        let t1=document.getElementById("t1")
+        let b1=document.getElementById("b1")
+        let d2=document.getElementById("d2")
+        function add(){
+            if (t1.value.length>0){
+                let li=document.createElement('li')
+                li.innerHTML=t1.value
+                d2.appendChild(li)
+                t1.value=""
+                err.innerHTML=""
+            }
+            else{
+                err.innerHTML="plese fill the blank"
+            
+            }
+        }
+        
+     </script>
+</body>
+</html>

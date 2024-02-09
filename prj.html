@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="prj.css"/>
+</head>
+<body>
+    <div class="main">
+        <div class="con">
+            <div class="h"><h2>TO-DO LIST</h2><i class=" a fa-solid fa-book"></i></div>
+            <div class="input">
+                <input type="text" placeholder="Please Enter" id="t1" />
+                <button onclick="add()">Add</button>
+            </div>
+            <div id="data">
+                
+            </div>
+               
+        </div>
+    </div>
+    <script>
+        let txt= document.getElementById('t1')
+        let data=document.getElementById("data")
+        function add(){
+            if (txt.value.length>0){
+                let li=document.createElement("li")
+                li.innerHTML=txt.value
+                data.appendChild(li)
+
+                let span= document.createElement("span")
+                span.innerHTML="X"
+                span.addEventListener("click",del)
+                li.appendChild(span)
+                txt.value=""
+             
+
+            }
+            else{
+                alert("Please Enter Text")
+            }
+        }
+        function del(event){
+            event.target.parentElement.remove()
+        }
+    </script>
+    
+</body>
+</html>
